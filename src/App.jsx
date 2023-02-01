@@ -7,10 +7,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className='text-blue-800 text-5xl font-bold text-center'>Virtue GOld</h1>
       <Signup/>
-      <Login/>
-      <Dashboard/>
+      {/* <Login/>
+      <Dashboard/> */}
     </div>
   )
 }

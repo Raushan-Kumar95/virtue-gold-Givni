@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.signupForm{
+  box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.5);
+}
+
 /* :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
