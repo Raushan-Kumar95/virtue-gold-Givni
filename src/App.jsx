@@ -1,5 +1,5 @@
 import './App.css'
-import Dashboard from './components/Dashboard'
+import Dashboard from './Dashboard'
 import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       {/* <Signup/> */}
-      {/* <Login/>
-      <Dashboard/> */}
+      {/* <Login/> */}
+      <Dashboard/>
       <ProfileDashboard />
     </div>
   )

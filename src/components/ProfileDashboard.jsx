@@ -3,17 +3,17 @@ import React from 'react'
 const ProfileDashboard = () => {
     return (
         <>
-            <div className="flex flex-col">
+            <div className="md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] flex flex-col">
 
-                <div className="font-bold text-2xl uppercase text-sky-300 underline">Profile :</div>
+               
                 
-                <div className="mx-16 p-6 flex flex-col md:flex-row gap-10 md:gap-20 justify-center  shadow-lg md:w-1/2 bg-gray-200">
+                <div className=" p-6 flex flex-col md:flex-row gap-10 md:gap-20 justify-center  shadow-lg bg-blue-100">
                     <div className="md:w-1/4 flex flex-col justify-center items-center ">
                         <img className="w-full " src="images/profile.jpg" alt="" />
-                        <div className="bg-blue-400 p-4 m-2  flex justify-center items-center w-1/2 rounded-md">Edit</div>
+                        <div className="bg-blue-300 text-white font-bold p-2 m-2  flex justify-center items-center w-1/2 rounded-md cursor-pointer"> <i className="fa fa-pencil mr-2"/>Edit</div>
                     </div>
 
-                    <div className=" flex flex-col gap-5 border-t-2 md:border-l-2 border-gray-300 pt-4 md:pl-4 ">
+                    <div className=" flex flex-col gap-5 border-t-2 md:border-2 border-blue-300 pt-4 md:p-8 ">
                         <div className="grid grid-cols-2 gap-10">
                             <div className="font-bold">User Name:</div>
                             <div className="">Rajesh</div>
@@ -36,7 +36,7 @@ const ProfileDashboard = () => {
                         </div>
 
                         <div className="">
-                        <div className="">Edit</div>
+                        <div className="bg-blue-300 text-white font-bold p-2 m-2  flex justify-center items-center w-1/2 rounded-md cursor-pointer"> <i className="fa fa-pencil mr-2"/>Edit</div>
                     </div>
                     </div>
 
