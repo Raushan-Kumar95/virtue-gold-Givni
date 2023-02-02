@@ -22,7 +22,7 @@ export const Components =
     },
     {
         name: "Survey Boy",
-        icon: "fa fa-child text-xl",
+        icon: "fa fa-male",
         path: "/survayBay"
     },
     {
