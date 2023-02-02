@@ -1,5 +1,6 @@
 import React from 'react'
 import goldImg from '../assets/images/goldImg.png'
+import vietue_logo_2 from '../../public/vietue_logo_2.png'
 
 const Signup = () => {
   return (
@@ -12,31 +13,31 @@ const Signup = () => {
         {/* </div> */}
           <form action="">
             <div className='flex'>
-              <i class="fa-solid fa-user bg-white p-2 my-2"></i> <input type="text" name="" id="" placeholder='username' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
+              <i class="fa-solid fa-user bg-white p-3 my-[9px] mr-2"></i> <input type="text" name="" id="" placeholder='username' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
             </div>
             <div className='flex gap-2'>
-              <i class="fa-solid fa-envelope bg-white p-2 my-2"></i> <input type="email" name="" id="" placeholder='email' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
+              <i class="fa-solid fa-envelope bg-white p-3 my-[9px]"></i> <input type="email" name="" id="" placeholder='email' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
             </div>
             <div className='flex gap-2'>
-              <i class="fa-solid fa-mobile bg-white p-2 my-2"></i> <input type="text" name="" id="" placeholder='mobile no' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
+              <i class="fa-solid fa-mobile bg-white p-3 my-[9px]"></i> <input type="text" name="" id="" placeholder='mobile no' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
             </div>
             <div className='flex gap-2'>
-              <i class="fa-solid fa-calendar-days bg-white p-2 my-2"></i> <input type="date" name="" id="" placeholder='dob' className='w-[95%] py-2 px-3 my-2 text-gray-400 border border-slate-400 focus:border-red-400 outline-none' />
+              <i class="fa-solid fa-calendar-days bg-white p-3 my-[9px]"></i> <input type="date" name="" id="" placeholder='dob' className='w-[95%] py-2 px-3 my-2 text-gray-400 border border-slate-400 focus:border-red-400 outline-none' />
             </div>
             <div className='flex gap-2'>
-              <i class="fa-solid fa-lock bg-white p-2 my-2"></i> <input type="password" name="" id="" placeholder='password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
+              <i class="fa-solid fa-lock bg-white p-3 my-[9px]"></i> <input type="password" name="" id="" placeholder='password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
             </div>
             <div className='flex gap-2'>
-              <i class="fa-solid fa-key bg-white p-2 my-2"></i><input type="password" name="" id="" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
+              <i class="fa-solid fa-key bg-white p-3 my-[9px]"></i><input type="password" name="" id="" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
             </div>
             <button className='bg-green-500 text-white text-xl font-semibold py-2 px-3 my-4 w-full'>SIGNUP</button>
 
           </form>
         </div>
 
-        <div className='flex justify-center items-center bg-red-400 text-white px-2'>
-          <img src={goldImg} alt="goldImg" md:width={150} width={120}  />
-          <p className='relative font-bold md:text-5xl text-2xl rotate-90 bg-gradient-to-r from-orange-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text'>Virtue Gold</p>
+        <div className=' bg-red-400 text-white px-8 py-14 md:block hidden'>
+          <img src={vietue_logo_2} width={150} alt="vietue_logo_2" className='pb-2' /> 
+          <img src={goldImg} alt="goldImg" width={200}  />
         </div>
       </div>
     </div>
