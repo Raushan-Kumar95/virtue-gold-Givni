@@ -1,15 +1,15 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 const ProfileDashboard = () => {
     return (
         <>
-            <div className="flex flex-col">
+            <div className=" ">
                 
-                <div className=" p-6 flex flex-col md:flex-row gap-10 md:gap-20 justify-center  shadow-lg bg-blue-100">
+                <div className=" p-6 flex flex-col md:flex-row gap-10 md:gap-20   justify-center  shadow-lg bg-blue-100">
                     <div className="md:w-1/4 flex flex-col justify-center items-center ">
                         <img className="w-full " src="images/profile.jpg" alt="" />
-                        <div className="bg-blue-300 text-white font-bold p-2 m-2  flex justify-center items-center w-1/2 rounded-md cursor-pointer"> <i className="fa fa-pencil mr-2"/>Edit</div>
+                        <Link to="/uploadImage" className="bg-blue-300 text-white font-bold p-2 m-2  flex justify-center items-center w-1/2 rounded-md cursor-pointer"> <i className="fa fa-pencil mr-2"/>Edit</Link>
                     </div>
 
                     <div className=" flex flex-col gap-5 border-t-2 md:border-2 border-blue-300 pt-4 md:p-8 ">
@@ -35,7 +35,7 @@ const ProfileDashboard = () => {
                         </div>
 
                         <div className="">
-                        <div className="bg-blue-300 text-white font-bold p-2 m-2  flex justify-center items-center w-1/2 rounded-md cursor-pointer"> <i className="fa fa-pencil mr-2"/>Edit</div>
+                        <Link to="/editProfileData" className="bg-blue-300 text-white font-bold p-2 m-2  flex justify-center items-center w-1/2 rounded-md cursor-pointer"> <i className="fa fa-pencil mr-2"/>Edit</Link>
                     </div>
                     </div>
 

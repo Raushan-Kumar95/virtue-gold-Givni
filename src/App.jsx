@@ -6,6 +6,8 @@ import Signup from './components/Signup'
 import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
+import EditProfileData from './components/EditProfile/EditProfileData'
+import UploadImage from './components/EditProfile/UploadImage'
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
       <Routes>
         <Route path='/signup' element={<Signup />} ></Route>
         <Route path='/profile' element={<ProfileDashboard />} ></Route>
+        <Route path='/editProfileData' element={<EditProfileData />} ></Route>
+        <Route path='/uploadImage' element={<UploadImage />} ></Route>
       </Routes>
       </div>
       </BrowserRouter>
