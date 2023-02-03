@@ -6,6 +6,8 @@ import Signup from './components/Signup'
 import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
+import EditProfileData from './components/EditProfile/EditProfileData'
+import UploadImage from './components/EditProfile/UploadImage'
 import SearchBar from './components/search/SearchBar'
 
 
@@ -19,17 +21,19 @@ function App() {
       {/* <Dashboard/> */}
       {/* <ProfileDashboard /> */}
       <BrowserRouter>
-        <Sidebar />
-        {/* <PaySlipVoucher/> */}
-        <div className='flex flex-col justify-between  gap-12'>
-          <SearchBar />
-          <PaySlipVoucher />
 
-          <Routes>
-            <Route path='/signup' element={<Signup />} ></Route>
-            <Route path='/profile' element={<ProfileDashboard />} ></Route>
-          </Routes>
-        </div>
+
+      <Sidebar />
+
+      <SearchBar />
+      {/* <PaySlipVoucher/> */}
+      <Routes>
+        <Route path='/signup' element={<Signup />} ></Route>
+        <Route path='/profile' element={<ProfileDashboard />} ></Route>
+        <Route path='/editProfileData' element={<EditProfileData />} ></Route>
+        <Route path='/uploadImage' element={<UploadImage />} ></Route>
+      </Routes>
+     
       </BrowserRouter>
     </div>
   )
