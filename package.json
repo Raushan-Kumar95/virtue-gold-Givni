@@ -15,10 +15,12 @@
     "@mui/material": "^5.11.7",
     "formik": "^2.2.9",
     "react": "^18.2.0",
+    "react-data-table-component": "^7.5.3",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.0",
     "react-router-dom": "^6.8.0",
     "rn-material-ui-textfield": "^1.0.9",
+    "styled-components": "^5.3.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {
