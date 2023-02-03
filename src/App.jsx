@@ -3,6 +3,7 @@ import Dashboard from './Dashboard'
 import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
+import PaySlipVoucher from './components/PaySlipVoucher'
 
 function App() {
 
@@ -10,8 +11,9 @@ function App() {
     <div className="App">
       {/* <Signup/> */}
       {/* <Login/> */}
-      <Dashboard/>
-      <ProfileDashboard />
+      <PaySlipVoucher/>
+      {/* <Dashboard/> */}
+      {/* <ProfileDashboard /> */}
     </div>
   )
 }
