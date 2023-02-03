@@ -37,7 +37,7 @@ const Sidebar = () => {
 
                     <div className='flex flex-col gap-2'>
                         <ul className='flex items-center gap-4' >
-                            <li onClick={() => setOpen(true)} className='flex gap-3 items-center' >
+                            <li onClick={() => setOpen(false)} className='flex gap-3 items-center' >
                                 <i className="  w-5"></i>
 
                                 <h1>Dashboard</h1>
@@ -58,12 +58,13 @@ const Sidebar = () => {
 
                         {NavMainData.map((data) => {
                             return (
-                                <li onClick={() => setOpen(true)} className='flex gap-3 items-center' >
+                                <li onClick={() => setOpen(false)} className='flex gap-3 items-center' >
                                     <i className={`${data?.icon} w-5`}></i>
 
                                     <NavLink to={`${data?.path}`}>{data.title}</NavLink>
 
                                 </li>
+                                
                             )
                         })}
 
