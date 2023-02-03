@@ -15,23 +15,21 @@ function App() {
     <div className="App">
       {/* <Signup/> */}
       {/* <Login/> */}
-      
+
       {/* <Dashboard/> */}
       {/* <ProfileDashboard /> */}
       <BrowserRouter>
+        <Sidebar />
+        {/* <PaySlipVoucher/> */}
+        <div className='flex flex-col justify-between  gap-12'>
+          <SearchBar />
+          <PaySlipVoucher />
 
-
-      <Sidebar />
-      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden '>
-      <PaySlipVoucher/>
-      {/* <PaySlipVoucher/> */}
-      <div className='flex flex-col justify-between  gap-12'>
-        <SearchBar/>
-      <Routes>
-        <Route path='/signup' element={<Signup />} ></Route>
-        <Route path='/profile' element={<ProfileDashboard />} ></Route>
-      </Routes>
-      </div>
+          <Routes>
+            <Route path='/signup' element={<Signup />} ></Route>
+            <Route path='/profile' element={<ProfileDashboard />} ></Route>
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   )
