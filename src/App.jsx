@@ -9,6 +9,7 @@ import Sidebar from './components/sidebar/Sidebar'
 import EditProfileData from './components/EditProfile/EditProfileData'
 import UploadImage from './components/EditProfile/UploadImage'
 import SearchBar from './components/search/SearchBar'
+import Client from './components/client/Client'
 
 
 function App() {
@@ -21,19 +22,19 @@ function App() {
       {/* <Dashboard/> */}
       {/* <ProfileDashboard /> */}
       <BrowserRouter>
+        <Sidebar />
+        {/* <PaySlipVoucher/> */}
+        <div className='flex flex-col justify-between  gap-12'>
+          <SearchBar />
+          {/* <PaySlipVoucher /> */}
 
-
-      <Sidebar />
-
-      <SearchBar />
-      {/* <PaySlipVoucher/> */}
-      <Routes>
-        <Route path='/signup' element={<Signup />} ></Route>
-        <Route path='/profile' element={<ProfileDashboard />} ></Route>
-        <Route path='/editProfileData' element={<EditProfileData />} ></Route>
-        <Route path='/uploadImage' element={<UploadImage />} ></Route>
-      </Routes>
-     
+          <Routes>
+            <Route path='/signup' element={<Signup />} ></Route>
+            <Route path='/profile' element={<ProfileDashboard />} ></Route>
+            <Route path='/clients' element={<Client />} ></Route>
+            
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   )
