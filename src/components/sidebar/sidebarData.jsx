@@ -27,6 +27,7 @@ export const Menu =
     {
         "title": "Payments", 
         "icon": "payment",
+        "path":"payment",
         "children": [
             { "title": "Payment Dashboard", "path": "/payments/dashboard" },
             { "title": "Payment History", "path": "/payments/history" },
@@ -36,6 +37,7 @@ export const Menu =
     {
         "title": "Orders",
         "icon": "shopping_cart",
+        "path":"orders",
         "children": [
             {
                 "title": "Order Notification",
@@ -46,6 +48,7 @@ export const Menu =
     {
         "title": "Clients",
         "icon": "group",
+        "path":"/clients",
         "children": [
             {
                 "title": "Client List",
@@ -56,6 +59,7 @@ export const Menu =
     {
         "title": "Coin System",
         "icon": "monetization_on",
+        "path" : "/coin",
         "children": [
             {
                 "title": "HDC Coin",
@@ -70,6 +74,7 @@ export const Menu =
     {
         "title": "Commission",
         "icon": "attach_money",
+        "path":"commision",
         "children": [
             {
                 "title": "Commission System",
@@ -80,6 +85,7 @@ export const Menu =
     {
         "title": "Wallet",
         "icon": "account_balance_wallet",
+        "path":"wallet",
         "children": [
             {
                 "title": "Wallet Management",
@@ -90,6 +96,7 @@ export const Menu =
     {
         "title": "Bills",
         "icon": "receipt",
+        "path":"bills",
         "children": [
             {
                 "title": "Dynamic Bill",
@@ -100,6 +107,7 @@ export const Menu =
     {
         "title": "Designation",
         "icon": "work",
+        "path":"deignation",
         "children": [
             {
                 "title": "Designation Post",
@@ -110,6 +118,7 @@ export const Menu =
     {
         "title": "Promotion",
         "icon": "trending_up",
+        "path":"/promotion",
         "children": [
             {
                 "title": "Promotion Target",

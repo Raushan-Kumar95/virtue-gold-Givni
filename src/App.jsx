@@ -7,6 +7,7 @@ import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
 import SearchBar from './components/search/SearchBar'
+import Client from './components/client/Client'
 
 
 function App() {
@@ -23,11 +24,13 @@ function App() {
         {/* <PaySlipVoucher/> */}
         <div className='flex flex-col justify-between  gap-12'>
           <SearchBar />
-          <PaySlipVoucher />
+          {/* <PaySlipVoucher /> */}
 
           <Routes>
             <Route path='/signup' element={<Signup />} ></Route>
             <Route path='/profile' element={<ProfileDashboard />} ></Route>
+            <Route path='/clients' element={<Client />} ></Route>
+            
           </Routes>
         </div>
       </BrowserRouter>
