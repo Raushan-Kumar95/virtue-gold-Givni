@@ -3,6 +3,7 @@ import './App.css'
 // import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
+import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
 
@@ -11,6 +12,11 @@ function App() {
 
   return (
     <div className="App">
+      {/* <Signup/> */}
+      {/* <Login/> */}
+      <PaySlipVoucher/>
+      {/* <Dashboard/> */}
+      {/* <ProfileDashboard /> */}
       <BrowserRouter>
 
 
