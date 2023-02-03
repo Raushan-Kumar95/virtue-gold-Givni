@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 const ProfileDashboard = () => {
     return (
         <>
-            <div className=" m-8 text-[14px] sm:text-lg md:text-xl  lg:m-32 ">
+            <div className=" flex flex-col justify-center items-center ml-16 text-[14px] sm:text-lg md:text-xl  lg:m-32 ">
                 
-                <div className=" pl-2 p-6 flex flex-col md:flex-row   justify-center items-center shadow-2xl bg-blue-100">
+                <div className=" pl-2 p-6 flex flex-col md:flex-row  ml-16 justify-center items-center shadow-2xl bg-blue-100">
                     <div className=" w-1/2 flex flex-col justify-center items-center">
                         <img className="w-1/2 " src="images/profile.jpg" alt="" />
                         <Link to="/uploadImage" className="bg-blue-300 text-white font-bold p-2 m-2  flex justify-center items-center w-1/2 rounded-md cursor-pointer"> <i className="fa fa-pencil mr-2"/>Edit</Link>

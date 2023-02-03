@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
 import EditProfileData from './components/EditProfile/EditProfileData'
 import UploadImage from './components/EditProfile/UploadImage'
+import SearchBar from './components/search/SearchBar'
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
       <BrowserRouter>
 
 
-      {/* <Sidebar /> */}
-      <div className=' '>
+      <Sidebar />
+
+      <SearchBar />
       {/* <PaySlipVoucher/> */}
       <Routes>
         <Route path='/signup' element={<Signup />} ></Route>
@@ -31,7 +33,7 @@ function App() {
         <Route path='/editProfileData' element={<EditProfileData />} ></Route>
         <Route path='/uploadImage' element={<UploadImage />} ></Route>
       </Routes>
-      </div>
+     
       </BrowserRouter>
     </div>
   )
