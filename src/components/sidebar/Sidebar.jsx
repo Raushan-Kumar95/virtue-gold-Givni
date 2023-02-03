@@ -10,9 +10,9 @@ const Sidebar = () => {
 
     const [open, setOpen] = useState(false)
 
-    let navopenState = " absolute -left-36 block "
+    let navopenState = " absolute -left-[200px] "
 
-    let navcloseState = " block "
+    let navcloseState = "  "
 
     // console.log(open)
 
