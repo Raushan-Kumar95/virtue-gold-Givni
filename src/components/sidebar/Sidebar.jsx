@@ -10,16 +10,16 @@ const Sidebar = () => {
 
     const [open, setOpen] = useState(false)
 
-    let navopenState = "absolute  -left-24"
+    let navopenState = " absolute -left-36 block "
 
-    let navcloseState = "w-48"
+    let navcloseState = " block "
 
-    console.log(open)
+    // console.log(open)
 
     return (
         <div className='flex w-full absolute z-20'>
 
-            <div className={`fixed overflow-y-scroll h-full overflow-x-none  md:flex shadow-xl top-0 left-0 bg-red-200  flex flex-col gap-8 h-screen px-12 py-12  ${open ?  navopenState : navcloseState}`}>
+            <div className={`fixed overflow-y-scroll h-full overflow-x-none  md:flex shadow-xl top-0 left-0 bg-red-200  flex flex-col gap-8 h-screen px-12 py-12 md:block ${open ?  navopenState : navcloseState}`}>
                 <header className=' flex flex-col gap-2 justify-center w-full'>
 
                     {open ?
@@ -44,8 +44,8 @@ const Sidebar = () => {
                             {Menu.map((data) => {
                                 return (
 
-                                    <li className='flex gap-3 items-center' >
-                                        {open ? <i className={`${data.icon} w-5  text-2xl hidden`}></i> : <i className={`${data.icon} w-5`}></i>}
+                                    <li onClick={() => setOpen(true)} className='flex gap-3 items-center' >
+                                        <i className={`${data.icon} w-5  text-2xl hidden`}></i> 
 
                                         {open ? "" : <h1>{data.name}</h1>}
                                     </li>
@@ -66,10 +66,10 @@ const Sidebar = () => {
 
                         {NavMainData.map((data) => {
                             return (
-                                <li className='flex gap-3 items-center' >
+                                <li  onClick={() => setOpen(true)} className='flex gap-3 items-center' >
                                     {/* {open ? <i className={`${data.icon} w-5  text-2xl hidden`}></i> : <i className={`${data.icon} w-5`}></i>} */}
 
-                                    {open ? "" : <NavLink to="">{data.title}</NavLink>}
+                                    {open ? "" : <NavLink to={`${data?.path}`}>{data.title}</NavLink>}
 
                                 </li>
                             )
