@@ -6,6 +6,8 @@ import Signup from './components/Signup'
 import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
+import EditProfileData from './components/EditProfile/EditProfileData'
+import UploadImage from './components/EditProfile/UploadImage'
 import SearchBar from './components/search/SearchBar'
 import Client from './components/client/Client'
 
@@ -36,6 +38,7 @@ function App() {
       </BrowserRouter>
     </div>
   )
+
 }
 
 export default App
