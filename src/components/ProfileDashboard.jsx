@@ -4,9 +4,7 @@ import React from 'react'
 const ProfileDashboard = () => {
     return (
         <>
-            <div className="md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] flex flex-col">
-
-               
+            <div className="flex flex-col">
                 
                 <div className=" p-6 flex flex-col md:flex-row gap-10 md:gap-20 justify-center  shadow-lg bg-blue-100">
                     <div className="md:w-1/4 flex flex-col justify-center items-center ">

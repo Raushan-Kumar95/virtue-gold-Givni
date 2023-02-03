@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 const EditProfileData = () => {
     return (
         <>
-            <div className="border-2 p-4 md:absolute md:top-[50%] md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%] flex flex-col gap-5">
+            <div className="border-2 p-4  flex flex-col gap-5">
                 <div className="">
                     <i className="fa-solid fa-user border-2 p-2 text-xl my-[9px] mr-2 bg-white" /> <TextField id="outlined-basic" label="User Name" variant="outlined" defaultValue="Rakesh" />
                 </div>
