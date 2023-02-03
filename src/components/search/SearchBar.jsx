@@ -1,7 +1,7 @@
 import React from 'react'
 
-const SearchBar = ({open, setOpen}) => {
-console.log(open)
+const SearchBar = () => {
+
 
   return (
     <div className='w-full '>
