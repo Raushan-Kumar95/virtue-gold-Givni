@@ -1,5 +1,7 @@
+import { fontSize } from '@mui/system';
 import React from 'react'
-import DataTable from 'react-data-table-component';
+import DataTable, { createTheme } from 'react-data-table-component';
+import logo from '../../public/vietue_logo_2.png';
 
 
 const columns = [
@@ -21,8 +23,8 @@ const columns = [
         selector: row => row.weight,
     },
     {
-        name: 'Unit_Price',
-        selector: row => row.unit_Price,
+        name: 'Unit Price',
+        selector: row => row.unitPrice,
     },
     {
         name: 'Amount',
@@ -33,12 +35,12 @@ const columns = [
 const data = [
     {
         id: 1,
-        item: '',
-        description: '',
-        quantity: '',
-        weight: '',
-        unit_Price: '',
-        amount: ''
+        item: 'Gold Coin',
+        description: 'pure gold Coin',
+        quantity: '2',
+        weight: '500g',
+        unitPrice: '8000',
+        amount: '16000'
     },
     {
         id: 2,
@@ -89,75 +91,117 @@ const data = [
 
 const paymentColumn = [
     {
-        name: 'Discount',
-        selector: row => row.discount,
-    },
-    {
         name: 'Total',
         selector: row => row.total,
     },
     {
-        name: 'Advance',
-        selector: row => row.advance,
+        name: 'Discount',
+        selector: row => row.discount,
+    },
+    {
+        name: 'Grand Total',
+        selector: row => row.grandTotal,
     },
 ]
 
 const paymentData = [
     {
-        discount: 'Rs 2',
-        total: 'Rs 5',
-        advance: 'Rs 1'
+        total: '16000',
+        discount: '1000',
+        grandTotal: '15000'
     },
 ]
 
+const customStylesForData = {
+    // rows: {
+    //     style: {
+    //         minHeight: '50px',
+    //         border:'1px solid gray'
+    //     },
+    // },
+    headCells: {
+        style: {
+            paddingLeft: '5px', 
+            paddingRight: '5px',
+            fontWeight: '600',
+            fontSize: '16px',
+            borderBottom:'1px solid gray',
+            marginTop: '15px'
+        },
+    },
+    cells: {
+        style: {
+            paddingLeft: '5px', 
+            paddingRight: '5px',
+            borderBottom:'1px solid gray',
+            borderRight:'1px solid gray',
+            borderLeft:'1px solid gray',
+            fontSize: '14px'
+        },
+    },
+};
+
+const customStylesForPaymentData = {
+    headCells: {
+        style: {
+            paddingLeft: '5px', 
+            paddingRight: '5px',
+            fontWeight: '600',
+            fontSize: '16px',
+            marginTop: '20px'
+        },
+    },
+    cells: {
+        style: {
+            paddingLeft: '5px', 
+            paddingRight: '5px',
+            border:'1px solid gray',
+            fontSize: '14px'
+        },
+    },
+}
+
+
+
+// createTheme creates a new theme named solarized that overrides the build in dark theme
+createTheme('solarized', {
+    text: {
+      primary: 'gray',
+    },
+    background: {
+      default: 'grayLight',
+    },
+  });
+
 const PaySlipVoucher = () => {
     return (
-        <div className=' flex justify-center items-center md:mx-96 mx-5 md:my-16 my-5 '>
-            <div className=' flex md:flex-row flex-col bg-white shadow-2xl'>
+        <div className=' flex justify-center items-center '>
+            <div className=' flex md:flex-row flex-col bg-white  border-2 mb-10 shadow-md'>
                 <div className='md:p-10 p-5 w-[800px]'>
-                    <div className='flex flex-row justify-between '>
-                        <h2 className='text-2xl font-bold'>Virtue Gold pvt ltd</h2>
+                    <div className='flex flex-row justify-between'>
+                        <img src={logo} width={100} alt="logo" />
+                        <h1 className='text-2xl font-bold'>Virtue Gold pvt ltd</h1>
                         <h3 className='text-xl font-semibold'>RECEIPT</h3>
                     </div>
 
-                    <div className='flex justify-between mr-20'>
+                    <div className='flex justify-between mr-20 mt-5'>
                         <div className=''>
-                            <div><span>Name: </span><span></span></div>
+                            <div className='my-2'><span>Name: </span><span></span></div>
                             <div><span>Address: </span><span></span></div>
                         </div>
 
                         <div>
-                            <div><span>Date: </span><span></span></div>
+                            <div className='my-2'><span>Date: </span><span></span></div>
                             <div><span>Invoice: </span><span></span></div>
                         </div>
                     </div>
 
                     <div >
-                        {/* <table className='border'>
-                <tr className='border'>
-                    <th className='w-28 h-12 border-2 border-black'>Item</th>
-                    <th className='w-56 h-12 border-2 border-black'>Description</th>
-                    <th className='w-24 h-12 border-2 border-black'>Quantity</th>
-                    <th className='w-24 h-12 border-2 border-black'>Weight</th>
-                    <th className='w-24 h-12 border-2 border-black'>Unit Price</th>
-                    <th className='w-24 h-12 border-2 border-black'>Amount</th>
-                    
-                </tr>
-                <tr className=''>
-                    <td className='w-28 h-12 border-2 border-black'>Gold</td>
-                    <td className='w-56 h-12 border-2 border-black'>This is unique Lorem ipsum dolor sit amet.</td>
-                    <td className='w-24 h-12 border-2 border-black'>2</td>
-                    <td className='w-24 h-12 border-2 border-black'>2kg</td>
-                    <td className='w-24 h-12 border-2 border-black'>1000</td>
-                    <td className='w-24 h-12 border-2 border-black'>2000</td>
-                </tr>
-            </table> */}
-
-                        <DataTable columns={columns} data={data} />
+                        <DataTable columns={columns} data={data} customStyles={customStylesForData} theme="solarized" />
                     </div>
 
                     <div>
-                        <DataTable columns={paymentColumn} data={paymentData} />
+                        <DataTable columns={paymentColumn} data={paymentData} customStyles={customStylesForPaymentData} />
                     </div>
 
 

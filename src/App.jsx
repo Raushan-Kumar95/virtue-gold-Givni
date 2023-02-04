@@ -3,6 +3,7 @@ import Dashboard from './Dashboard'
 import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
+import PaymentGateway from './components/PaymentGateway'
 import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Dashboard />} ></Route>
             <Route path='/profile' element={<ProfileDashboard />} ></Route>
+            <Route path='payment' element={<PaymentGateway />} ></Route>
             <Route path='/clients' element={<Client />} ></Route>
             <Route path='/bills' element={<PaySlipVoucher />} ></Route>
             <Route path='/uploadImage' element={<UploadImage />} ></Route>
