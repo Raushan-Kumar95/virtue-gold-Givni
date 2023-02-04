@@ -3,6 +3,7 @@ import './App.css'
 import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
+import PaymentGateway from './components/PaymentGateway'
 import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
@@ -17,17 +18,15 @@ function App() {
 
   return (
     <div className="App">
-     
-
-     
       <BrowserRouter>
         <Sidebar />
         <div className='flex flex-col justify-between  gap-12'>
           <SearchBar />
 
           <Routes>
-            <Route path='/signup' element={<Signup />} ></Route>
+            <Route path='/' element={<Dashboard />} ></Route>
             <Route path='/profile' element={<ProfileDashboard />} ></Route>
+            <Route path='payment' element={<PaymentGateway />} ></Route>
             <Route path='/clients' element={<Client />} ></Route>
             <Route path='/coin' element={<Coins/>} ></Route>
             <Route path='/bills' element={<PaySlipVoucher />} ></Route>
