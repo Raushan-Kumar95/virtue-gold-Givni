@@ -18,7 +18,7 @@ const Sidebar = () => {
 
     return (
         <div className='flex w-full absolute z-20 relative'>
-            <div className={`w-screen h-screen bg-white opacity-30 absolute hidden`}></div>
+            <div className={`w-screen h-screen bg-white opacity-30 absolute md:hidden ${open ? "block":  "hidden"}`}></div>
             <div className={`fixed overflow-y-scroll h-full overflow-x-none  md:flex shadow-xl top-0 left-0 bg-red-200  flex flex-col gap-8 h-screen px-12 py-12 md:block ${open ? navopenState : navcloseState}`}>
                 <header className=' flex flex-col gap-2 justify-center w-full'>
             
@@ -41,9 +41,6 @@ const Sidebar = () => {
                                 <i className="w-5"></i>
                                 <NavLink to="">Dashboard</NavLink>
                             </li>
-
-
-
                         </ul>
                     </div>
                 </div>
@@ -73,7 +70,10 @@ const Sidebar = () => {
             <button onClick={() => setOpen(!open)} className={`md:hidden z-20 md:left-64 md:top-4 absolute ${open ? "left-64 top-4 ":"left-4 top-4  "}`}>
                {!open ? <OpenNav /> : <CloseNav/> } 
             </button>
-
+            <button onClick={() => setOpen(!open)} className={`hidden md:block z-20 md:left-60 md:top-4 absolute ${open ? "left-64 top-4 ":"left-4 top-4  "}`}>
+               {/* {!open ? <OpenNav /> : <CloseNav/> }  */}
+               <OpenNav/>
+            </button>
 
         </div>
 
@@ -102,11 +102,10 @@ export const OpenNav = () => {
 
 export const CloseNav = () => {
     return (
-        <button className=''>
-            <ul className='flex flex-col gap-1'>
+        <button className='w-8 h-8 bg-red-100 border-2 border-dashed'>
+            <ul className='flex flex-col gap-1 bg-red-400'>
                 <li className='w-8 absolute rotate-45 h-1 bg-black'></li>
                 <li className='w-8 absolute -rotate-45 h-1 bg-black'></li>
-
             </ul>
         </button>
     )
