@@ -16,24 +16,27 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Signup/> */}
-      {/* <Login/> */}
+     
 
-      {/* <Dashboard/> */}
-      {/* <ProfileDashboard /> */}
+     
       <BrowserRouter>
         <Sidebar />
-        {/* <PaySlipVoucher/> */}
         <div className='flex flex-col justify-between  gap-12'>
           <SearchBar />
-          {/* <PaySlipVoucher /> */}
+           <Signup/>
+           <Login/>
 
           <Routes>
             <Route path='/signup' element={<Signup />} ></Route>
             <Route path='/profile' element={<ProfileDashboard />} ></Route>
             <Route path='/clients' element={<Client />} ></Route>
-            
+            <Route path='/bills' element={<PaySlipVoucher />} ></Route>
+            <Route path='/uploadImage' element={<UploadImage />} ></Route>
+            <Route path='/editProfileData' element={<EditProfileData />} ></Route>
+            <Route path='/login' element={<Login />} ></Route>
+            <Route path='/signup' element={<Signup />} ></Route>
           </Routes>
+
         </div>
       </BrowserRouter>
     </div>
