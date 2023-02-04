@@ -1,5 +1,5 @@
 import React from "react";
-import BuyCoin from "./Coins/BuyCoin";
+import BuyCoin from "./coins/BuyCoin";
 
 const Coins= ()=>{
 

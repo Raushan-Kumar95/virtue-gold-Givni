@@ -1,5 +1,5 @@
 import './App.css'
-// import Dashboard from './Dashboard'
+import Dashboard from './Dashboard'
 import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
@@ -14,7 +14,10 @@ import Client from './components/client/Client'
 import Coins from './components/Coins'
 
 
+
+
 function App() {
+
 
   return (
     <div className="App">

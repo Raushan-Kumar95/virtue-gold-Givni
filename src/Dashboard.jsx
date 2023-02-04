@@ -28,34 +28,37 @@ const Dashboard = () => {
         ]
     })
 
+    // let filteredData = Data.filter((data) => data.year > 2017);
+    // console.log(filteredData)
+
     return (
         <div className=''>
-            {/* <h1 className='py-4 text-2xl'>Dashboard</h1> */}
-            {/* <PieChart chartData={chartData} /> */}
+            
             <div className='md:ml-64 sm:ml-0 md:mr-8 '>
                 <div className='grid lg:grid-cols-12 gap-12 p-12 bg-gray-100 place-items-center'>
-                    <div className="col-span-3">
-                        <ProgressChart chartData={chartData}/>
-                    </div>
+                    {Data.filter((data)=> data.year > 2016).map((data) => {
+                        let { progress, year, userGain, userLost } = data;
+                        return (
+                            <div className="col-span-4" >
+                                <ProgressChart progress={progress} year={year} userGain={userGain} userLost={userLost} />
+                            </div>
+                        );
+                    })}
+
                     <div className="col-span-4 ">
                         <BarChart chartData={chartData} />
                     </div>
-                    <div className="col-span-4">
-                        <BarChart chartData={chartData} />
-                    </div>
-                    <div className="col-span-4">
-                        <BarChart chartData={chartData} />
-                    </div>
+                    
                     <div className="col-span-4">
                         <LineChart chartData={chartData} />
                     </div>
-                    <div className="col-span-8">
+                    <div className="col-span-4">
                         <PieChart chartData={chartData} />
                     </div>
 
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }
