@@ -18,7 +18,7 @@ const Sidebar = () => {
 
     return (
         <div className='flex w-full absolute z-20 relative'>
-            
+            <div className={`w-screen h-screen bg-white opacity-30 absolute hidden`}></div>
             <div className={`fixed overflow-y-scroll h-full overflow-x-none  md:flex shadow-xl top-0 left-0 bg-red-200  flex flex-col gap-8 h-screen px-12 py-12 md:block ${open ? navopenState : navcloseState}`}>
                 <header className=' flex flex-col gap-2 justify-center w-full'>
             
@@ -38,9 +38,8 @@ const Sidebar = () => {
                     <div className='flex flex-col gap-2'>
                         <ul className='flex items-center gap-4' >
                             <li onClick={() => setOpen(false)} className='flex gap-3 items-center' >
-                                <i className="  w-5"></i>
-
-                                <h1>Dashboard</h1>
+                                <i className="w-5"></i>
+                                <NavLink to="">Dashboard</NavLink>
                             </li>
 
 
