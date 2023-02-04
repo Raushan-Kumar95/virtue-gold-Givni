@@ -12,7 +12,7 @@ const PaymentGateway = () => {
     return (
         <div className=' flex md:ml-64 sm:ml-0 md:mr-8 md:justify-start justify-center '>
             <div className=' flex md:flex-row flex-col bg-white mb-10  border-2 shadow-sm'>
-                <div className='md:py-5 max-w-[1000px] md:mx-0 mx-10'>
+                <div className='md:py-5 max-w-[1000px]  md:mx-0 mx-10'>
 
                     <div className='flex justify-between py-5 px-10'>
                         <h1 className='text-xl font-semibold'>Virtue Gold Pvt Ltd.</h1>
