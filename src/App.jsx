@@ -1,5 +1,5 @@
 import './App.css'
-import Dashboard from './Dashboard'
+// import Dashboard from './Dashboard'
 import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
@@ -7,10 +7,11 @@ import PaymentGateway from './components/PaymentGateway'
 import PaySlipVoucher from './components/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
-import EditProfileData from './components/EditProfile/EditProfileData'
-import UploadImage from './components/EditProfile/UploadImage'
+import EditProfileData from './components/editProfile/EditProfileData'
+import UploadImage from './components/editProfile/UploadImage'
 import SearchBar from './components/search/SearchBar'
 import Client from './components/client/Client'
+import Coins from './components/Coins'
 
 
 function App() {
@@ -27,11 +28,12 @@ function App() {
             <Route path='/profile' element={<ProfileDashboard />} ></Route>
             <Route path='payment' element={<PaymentGateway />} ></Route>
             <Route path='/clients' element={<Client />} ></Route>
+            <Route path='/coin' element={<Coins/>} ></Route>
             <Route path='/bills' element={<PaySlipVoucher />} ></Route>
             <Route path='/uploadImage' element={<UploadImage />} ></Route>
             <Route path='/editProfileData' element={<EditProfileData />} ></Route>
             <Route path='/login' element={<Login />} ></Route>
-            <Route path='/signup' element={<Signup />} ></Route>
+            
           </Routes>
 
         </div>
