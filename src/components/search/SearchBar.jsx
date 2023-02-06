@@ -3,9 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 const SearchBar = () => {
 
- const loaction = useLocation()
-
- console.log(loaction.pathname)
+  const loaction = useLocation() 
 
   return (
     <div className='w-full '>
@@ -15,7 +13,7 @@ const SearchBar = () => {
           <div className='flex gap-4 justify-center items-center'>
             <i className='fa fa-bell'></i>
             {/* <button className='uppercase'>Givni</button> */}
-    {loaction.pathname === '/login' ? <Link to='/signup' className='uppercase'>Signup</Link> : <Link to='/login' className='uppercase'>Login</Link> }
+            {loaction.pathname === '/login' ? <Link to='/signup' className='uppercase'>Signup</Link> : <Link to='/login' className='uppercase'>Login</Link>}
 
           </div>
         </div>
