@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Axios from 'axios' 
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '../../public/vietue_logo_2.png'
 import { Link } from "react-router-dom";
 
 const Signup = () => {
 
-  const URL = ""
-  // sending data function
+  const URL = "http://192.168.1.16:8080/addData"
   const [data, setData] = useState({
-    username: '',
+    fullName: '',
     email: '',
     mobile: '',
     password: '',
@@ -20,32 +20,31 @@ const Signup = () => {
     // console.log(newData);
   }
 
-  // onclick function
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(data);
+    console.log(data);
 
     Axios.post(URL, {
-      username: data.username,
+      fullName: data.fullName,
       email: data.email,
       mobile: data.mobile,
       password: data.password,
     }).then(res => {
       console.log(res.data);
-    }).catch(err => { console.log('unsuccess'); })
+    }).catch(err => { console.log('Not Connected to Database'); })
   }
 
   return (
-    <div className='absolute flex justify-center items-center md:mx-16 mx-5 md:my-16 my-5'>
+    <div className='flex justify-center items-center'>
       <div className=' flex md:flex-row flex-col bg-blue-300 shadow-2xl'>
 
         <div className='md:p-10 p-5 w-[400px]'>
           {/* <div className='flex justify-center'> */}
           <h1 className='text-center text-2xl font-semibold text-gray-600 pb-2'>Signup</h1>
           {/* </div> */}
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className='flex gap-2'>
-              <i class="fa-solid fa-user bg-white p-3 my-[9px]"></i> <input value={data.username} onChange={handleData} type="text" name="" id="username" placeholder='username' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
+              <i class="fa-solid fa-user bg-white p-3 my-[9px]"></i> <input value={data.fullName} onChange={handleData} type="text" name="" id="fullName" placeholder='username' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
             </div>
             <div className='flex gap-2'>
               <i class="fa-solid fa-envelope bg-white p-3 my-[9px]"></i> <input value={data.email} onChange={handleData} type="email" name="" id="email" placeholder='email' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
