@@ -39,7 +39,7 @@ const Sidebar = () => {
                         <ul className='flex items-center gap-4' >
                             <li onClick={() => setOpen(false)} className='flex gap-3 items-center' >
                                 <i className="w-5"></i>
-                                <NavLink to="">Dashboard</NavLink>
+                                <NavLink to="/dashboard">Dashboard</NavLink>
                             </li>
                         </ul>
                     </div>
