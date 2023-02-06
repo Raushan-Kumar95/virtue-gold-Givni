@@ -3,8 +3,8 @@ import Dashboard from './Dashboard'
 import Login from './components/Login'
 import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
-import PaymentGateway from './components/PaymentGateway'
-import PaySlipVoucher from './components/PaySlipVoucher'
+import PaymentGateway from './components/payment/PaymentGateway'
+import PaySlipVoucher from './components/payment/PaySlipVoucher'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
 import EditProfileData from './components/editProfile/EditProfileData'
@@ -14,7 +14,10 @@ import Client from './components/client/Client'
 import Coins from './components/Coins'
 
 
+
+
 function App() {
+
 
   return (
     <div className="App">

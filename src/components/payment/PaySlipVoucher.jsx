@@ -1,7 +1,7 @@
 import { fontSize } from '@mui/system';
 import React from 'react'
 import DataTable, { createTheme } from 'react-data-table-component';
-import logo from '../../public/vietue_logo_2.png';
+import logo from '../../../public/vietue_logo_2.png';
 
 
 const columns = [
@@ -166,16 +166,16 @@ const customStylesForPaymentData = {
 // createTheme creates a new theme named solarized that overrides the build in dark theme
 createTheme('solarized', {
     text: {
-      primary: 'gray',
+    //   primary: 'gray',
     },
     background: {
-      default: 'grayLight',
+    //   default: 'grayLight',
     },
   });
 
 const PaySlipVoucher = () => {
     return (
-        <div className=' flex justify-center items-center '>
+        <div className=' flex md:ml-64 sm:ml-0 md:mr-8 '>
             <div className=' flex md:flex-row flex-col bg-white  border-2 mb-10 shadow-md'>
                 <div className='md:p-10 p-5 w-[800px]'>
                     <div className='flex flex-row justify-between'>
