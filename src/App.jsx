@@ -32,7 +32,8 @@ function App() {
             <Route path='/bills' element={<PaySlipVoucher />} ></Route>
             <Route path='/uploadImage' element={<UploadImage />} ></Route>
             <Route path='/editProfileData' element={<EditProfileData />} ></Route>
-            <Route path='/login' element={<Login />} ></Route>
+            <Route path='/login' element={<Login />} ></Route>  
+            <Route path='/signup' element={<Signup />} ></Route>  
             
           </Routes>
 
