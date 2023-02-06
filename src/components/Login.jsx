@@ -1,6 +1,7 @@
 import React from 'react'
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '../../public/vietue_logo_2.png'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
@@ -25,7 +26,7 @@ const Login = () => {
             </div>
 
             <button className='bg-cyan-700 text-white text-xl font-semibold py-2 px-3 my-4 w-full'>Login</button>
-            <p className='text-gray-600 font-semibold'>Create Account - <a href="" className='text-purple-800'>Signup</a></p>  
+            <p className='text-gray-600 font-semibold'>Create Account - <Link to='/signup' className='text-purple-800'>Signup</Link></p>  
 
           </form>
         </div>
