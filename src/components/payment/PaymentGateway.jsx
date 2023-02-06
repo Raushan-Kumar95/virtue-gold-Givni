@@ -12,7 +12,7 @@ const PaymentGateway = () => {
     return (
         <div className=' flex md:ml-64 sm:ml-0 md:mr-8 md:justify-start justify-center '>
             <div className=' flex md:flex-row flex-col bg-white mb-10  border-2 shadow-sm'>
-                <div className='md:py-5 max-w-[1000px]  md:mx-0 mx-10'>
+                <div className=' max-w-[1000px]'>
 
                     <div className='flex justify-between py-5 px-10'>
                         <h1 className='text-xl font-semibold'>Virtue Gold Pvt Ltd.</h1>
@@ -20,8 +20,8 @@ const PaymentGateway = () => {
                     </div>
                     <hr className='border-gray-300' />
 
-                    <div className='bg-gray-100 flex md:flex-row flex-col md:justify-center gap-5'>
-                        <div className='shadow-sm border bg-white p-5 my-5 h-[260px]'>
+                    <div className='bg-gray-100 flex md:flex-row flex-col justify-center items-center gap-5 md:px-28 px-5 py-5'>
+                        <div className='shadow-sm border bg-white px-5 py-5 md:h-[260px] h-[210px]'>
                             <h5 className='py-2'>How would you like to pay?</h5>
 
                             <div className='grid grid-cols-3 gap-5'>
@@ -29,7 +29,7 @@ const PaymentGateway = () => {
                                 <img src={paytm} alt="paytm" className='border md:px-5 px-2 md:py-5 py-3 shadow-sm rounded-md md:w-24 w-16' />
                                 <img src={paypal} alt="paypal" className='border md:px-5 px-2 md:py-7 py-4 shadow-sm rounded-md md:w-24 w-16' />
                                 <img src={credit} alt="credit" className='border md:px-5 px-2 md:py-5 py-2 shadow-sm rounded-md md:w-24 w-16' />
-                                <img src={gpay} alt="gpay" className='border md:px-5 px-1 md:py-3 py-1 shadow-sm rounded-md md:w-24 w-16' />
+                                <img src={gpay} alt="gpay" className='border md:px-5 px-3 md:py-2 py-2 shadow-sm rounded-md md:w-24 w-16' />
                                 <img src={visa} alt="visa" className='border md:px-5 px-2 md:py-5 py-2 shadow-sm rounded-md md:w-24 w-16' />
                             </div>
                         </div>
