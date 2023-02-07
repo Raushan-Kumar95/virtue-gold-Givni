@@ -28,11 +28,11 @@ const Login = () => {
     e.preventDefault();
     console.log(data, 24);
 
-    Axios.post(URL, {
-      email: data.email,
-      password: data.password,
-    }).then(res => {
-      console.log(res.data);
+    Axios.post(URL, data).then(res => {
+      // console.log(res.data);
+      if(res.data){
+        localStorage.setItem(res.data.token)
+      }
       errorMessage(res.data);
     }).catch(err => { console.log('Not Connected to Database'); })
   }
