@@ -1,13 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import BarChart from './components/chart/BarChart'
 import LineChart from './components/chart/LineChart'
 import PieChart from './components/chart/PieChart'
 import ProgressChart from './components/chart/ProgressChart'
 
+
 import { Data } from './components/utils/Data'
 
 
 const Dashboard = () => {
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            navigate('/login')
+        }
+    }, [])
 
     const [chartData, setChartData] = useState({
         labels: Data.map((data) => data.year),
@@ -33,10 +43,10 @@ const Dashboard = () => {
 
     return (
         <div className=''>
-            
+
             <div className='md:ml-64 sm:ml-0 md:mr-8 '>
                 <div className='grid lg:grid-cols-12 gap-12 p-12 bg-gray-100 place-items-center'>
-                    {Data.filter((data)=> data.year > 2016).map((data) => {
+                    {Data.filter((data) => data.year > 2016).map((data) => {
                         let { progress, year, userGain, userLost } = data;
                         return (
                             <div className="col-span-4" >
@@ -48,7 +58,7 @@ const Dashboard = () => {
                     <div className="col-span-4 ">
                         <BarChart chartData={chartData} />
                     </div>
-                    
+
                     <div className="col-span-4">
                         <LineChart chartData={chartData} />
                     </div>

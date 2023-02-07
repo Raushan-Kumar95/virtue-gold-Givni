@@ -2,38 +2,42 @@ import React, {useState} from 'react'
 import Axios from 'axios' 
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '../../public/vietue_logo_2.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+
 
 const Login = () => {
-<<<<<<< HEAD
 
-    
+  const navigate = useNavigate()
 
-=======
-  const URL = "http://192.168.1.16:8080/token"
+  const URL = "https://reqres.in/api/login"
+
   const [data, setData] = useState({
     email: '',
     password: '',
   })
+
+
   const handleData = (e) => {
     const newData = { ...data }
     newData[e.target.id] = e.target.value;
     setData(newData)
-    // console.log(newData);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    console.log(data, 24);
 
-    Axios.post(URL, {
-      email: data.email,
-      password: data.password,
-    }).then(res => {
-      console.log(res.data);
+    Axios.post(URL, data).then(res => {
+      if(res.data.token){
+        localStorage.setItem('token', res.data.token)
+        navigate('/dashboard')
+        console.log("token setted", 35 + " login.jsx")
+      }
     }).catch(err => { console.log('Not Connected to Database'); })
   }
->>>>>>> 0a6440adf7fd9bd457d2757a7653da7119b6a84b
+
+
 
   return (
     <div className='flex justify-center items-center'>
@@ -46,6 +50,7 @@ const Login = () => {
 
         <div className='md:px-10 py-[22%] p-5 w-[400px]'>
           <h1 className='text-center text-2xl font-semibold text-gray-600 pb-2'>Login</h1>
+
           <form  onSubmit={handleSubmit}>
 
             <div className='flex gap-2'>
