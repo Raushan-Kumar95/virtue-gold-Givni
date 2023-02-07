@@ -28,15 +28,26 @@ const Login = () => {
     e.preventDefault();
     console.log(data, 24);
 
-    Axios.post(URL, data).then(res => {
-      if(res.data.token){
-        localStorage.setItem('token', res.data.token)
-        navigate('/dashboard')
-        console.log("token setted", 35 + " login.jsx")
-      }
+    Axios.post(URL, {
+      email: data.email,
+      password: data.password,
+    }).then(res => {
+      console.log(res.data);
+      errorMessage(res.data);
     }).catch(err => { console.log('Not Connected to Database'); })
   }
 
+  const errorMessage = (error) => {
+    if (error) {
+      toast.success('Signup successfully!', {
+        position: "top-right"
+      });
+    } else {
+      toast.error('Fill all Details!', {
+        position: "top-right"
+      });
+    }
+  }
 
 
   return (
