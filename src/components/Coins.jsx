@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import BuyCoin from "./coins/BuyCoin";
-import BuySilver from "./coins/BuySilver";
 
 const Coins= ()=>{
     
