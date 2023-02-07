@@ -2,24 +2,31 @@ import React, {useState} from 'react'
 import Axios from 'axios' 
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '../../public/vietue_logo_2.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+
 
 const Login = () => {
-  const URL = "http://192.168.1.16:8080/token"
+
+  const navigate = useNavigate()
+
+  const URL = "https://reqres.in/api/login"
+
   const [data, setData] = useState({
     email: '',
     password: '',
   })
+
+
   const handleData = (e) => {
     const newData = { ...data }
     newData[e.target.id] = e.target.value;
     setData(newData)
-    // console.log(newData);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    console.log(data, 24);
 
     Axios.post(URL, {
       email: data.email,
@@ -42,6 +49,7 @@ const Login = () => {
     }
   }
 
+
   return (
     <div className='flex justify-center items-center'>
       <div className=' flex md:flex-row flex-col bg-blue-300 shadow-2xl'>
@@ -53,6 +61,7 @@ const Login = () => {
 
         <div className='md:px-10 py-[22%] p-5 w-[400px]'>
           <h1 className='text-center text-2xl font-semibold text-gray-600 pb-2'>Login</h1>
+
           <form  onSubmit={handleSubmit}>
 
             <div className='flex gap-2'>

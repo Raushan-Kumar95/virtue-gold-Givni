@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import SearchBar from '../search/SearchBar'
+// import SearchBar from '../search/SearchBar'
 import { Menu, NavMainData } from "./sidebarData"
 import logo from "/vietue_logo_2.png"
 
