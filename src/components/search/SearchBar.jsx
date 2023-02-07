@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import AuthUser from '../utils/AuthUser'
 
 const SearchBar = () => {
 
   const loaction = useLocation() 
+
+  const {logout} = AuthUser();
 
   return (
     <div className='w-full '>
@@ -12,7 +15,7 @@ const SearchBar = () => {
           <input className='px-2 py-2' type="text" name="search" id="" placeholder='Search' />
           <div className='flex gap-4 justify-center items-center'>
             <i className='fa fa-bell'></i>
-            {/* <button className='uppercase'>Givni</button> */}
+            {loaction.pathname === '/login' ? "":<button className='uppercase' onClick={logout}>Logout</button>}
             {loaction.pathname === '/login' ? <Link to='/signup' className='uppercase'>Signup</Link> : <Link to='/login' className='uppercase'>Login</Link>}
 
           </div>
