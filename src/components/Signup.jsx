@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Axios from 'axios' 
+import Axios from 'axios'
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '../../public/vietue_logo_2.png'
 import { Link } from "react-router-dom";
@@ -31,7 +31,20 @@ const Signup = () => {
       password: data.password,
     }).then(res => {
       console.log(res.data);
+      errorMessage(res.data);
     }).catch(err => { console.log('Not Connected to Database'); })
+  }
+
+  const errorMessage = (error) => {
+    if (error) {
+      toast.success('Signup successfully!', {
+        position: "top-right"
+      });
+    } else {
+      toast.error('Fill all Details!', {
+        position: "top-right"
+      });
+    }
   }
 
   return (
@@ -62,7 +75,7 @@ const Signup = () => {
               <i class="fa-solid fa-key bg-white p-3 my-[9px]"></i><input type="password" name="" id="" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
             </div>
             <button className='bg-green-500 text-white text-xl font-semibold py-2 px-3 my-4 w-full'>SIGNUP</button>
-            <p className='text-gray-600 font-semibold'>Already Signup? - <Link to="/login"  className='text-purple-800'>Login</Link></p>
+            <p className='text-gray-600 font-semibold'>Already Signup? - <Link to="/login" className='text-purple-800'>Login</Link></p>
           </form>
         </div>
 

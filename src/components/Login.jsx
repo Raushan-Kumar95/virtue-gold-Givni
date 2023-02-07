@@ -26,7 +26,20 @@ const Login = () => {
       password: data.password,
     }).then(res => {
       console.log(res.data);
+      errorMessage(res.data);
     }).catch(err => { console.log('Not Connected to Database'); })
+  }
+
+  const errorMessage = (error) => {
+    if (error) {
+      toast.success('Signup successfully!', {
+        position: "top-right"
+      });
+    } else {
+      toast.error('Fill all Details!', {
+        position: "top-right"
+      });
+    }
   }
 
   return (
