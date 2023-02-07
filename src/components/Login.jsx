@@ -4,6 +4,10 @@ import vietue_logo_2 from '../../public/vietue_logo_2.png'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
+
+    
+
+
   return (
     <div className='flex justify-center items-center md:mx-16 mx-5 md:my-16 my-5'>
       <div className=' flex md:flex-row flex-col bg-blue-300 shadow-2xl'>

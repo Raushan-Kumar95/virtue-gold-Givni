@@ -5,13 +5,17 @@ import ProfileDashboard from './components/ProfileDashboard'
 import Signup from './components/Signup'
 import PaymentGateway from './components/payment/PaymentGateway'
 import PaySlipVoucher from './components/payment/PaySlipVoucher'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import Sidebar from './components/sidebar/Sidebar'
 import EditProfileData from './components/editProfile/EditProfileData'
 import UploadImage from './components/editProfile/UploadImage'
 import SearchBar from './components/search/SearchBar'
 import Client from './components/client/Client'
 import Coins from './components/Coins'
+import { useEffect } from 'react'
+
+
+
 
 const USER_TYPES = {
   PUBLIC: 'public user',
@@ -19,8 +23,19 @@ const USER_TYPES = {
 }
 
 
+
 function App() {
 
+  // const navigate = useNavigate()
+
+  useEffect(()=> {
+    if(!localStorage.getItem('token')){
+      // navigate('/login')
+
+      // return <Login />
+      console.log("true")
+    }
+  }, [])
 
   return (
     <div className="App">
