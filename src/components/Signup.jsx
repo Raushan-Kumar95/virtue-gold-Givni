@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Signup = () => {
 
-  const URL = "http://192.168.1.16:8080/addData"
+  const URL = "http://localhost:8080/addData"
   const [data, setData] = useState({
     fullName: '',
     email: '',
@@ -31,25 +31,15 @@ const Signup = () => {
       password: data.password,
     }).then(res => {
       console.log(res.data);
-      errorMessage(res.data);
-    }).catch(err => { console.log('Not Connected to Database'); })
+      alert('Successfully Signup!')
+    }).catch(err => { err })
   }
 
-  const errorMessage = (error) => {
-    if (error) {
-      toast.success('Signup successfully!', {
-        position: "top-right"
-      });
-    } else {
-      toast.error('Fill all Details!', {
-        position: "top-right"
-      });
-    }
-  }
+  
 
   return (
-    <div className='flex justify-center items-center'>
-      <div className=' flex md:flex-row flex-col bg-blue-300 shadow-2xl'>
+    <div className='flex justify-center items-center '>
+      <div className=' flex md:flex-row flex-col bg-blue-300 shadow-2xl rounded-md'>
 
         <div className='md:p-10 p-5 w-[400px]'>
           {/* <div className='flex justify-center'> */}
@@ -74,12 +64,12 @@ const Signup = () => {
             <div className='flex gap-2'>
               <i class="fa-solid fa-key bg-white p-3 my-[9px]"></i><input type="password" name="" id="" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
             </div>
-            <button className='bg-green-500 text-white text-xl font-semibold py-2 px-3 my-4 w-full'>SIGNUP</button>
-            <p className='text-gray-600 font-semibold'>Already Signup? - <Link to="/login" className='text-purple-800'>Login</Link></p>
+            <button className='bg-green-500 hover:bg-green-600 text-white text-xl font-semibold py-2 px-3 my-4 w-full hover:duration-300 hover:shadow-lg'>SIGNUP</button>
+            <p className='text-gray-600 font-semibold'>Already Signup? - <Link to="/login" className='text-purple-800 hover:text-green-800 hover:underline hover:duration-300 hover:drop-shadow-lg hover:scale-110'>Login</Link></p>
           </form>
         </div>
 
-        <div className=' bg-red-400 text-white px-8 py-14 md:block hidden'>
+        <div className=' bg-red-400 text-white px-8 py-14 rounded-md md:block hidden'>
           <img src={vietue_logo_2} width={150} alt="vietue_logo_2" className='pb-2' />
           <img src={goldImg} alt="goldImg" width={200} />
         </div>
