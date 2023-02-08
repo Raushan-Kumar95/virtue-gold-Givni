@@ -19,21 +19,21 @@ const AuthUser = () => {
         navigate("/login")
       }
 
-    //   const getUser = ()=>{
-    //     const userString= sessionStorage.getItem('user')
-    //     const user_detail= JSON.parse(userString)
-    //     return user_detail
-    //  }
+      const getUser = ()=>{
+        const userString= sessionStorage.getItem('user')
+        const user_detail= JSON.parse(userString)
+        return user_detail
+     }
 
      const [token,setToken] =useState(getToken())
-    //  const[user,setUser] =useState(getUser())
+     const[user,setUser] =useState(getUser())
 
-      const saveToken =(token) =>{
+      const saveToken =(token,user) =>{
 
             sessionStorage.setItem('token',JSON.stringify(token))
-            // sessionStorage.setItem('user',JSON.stringify(user))
+            sessionStorage.setItem('user',JSON.stringify(user))
             setToken(token)
-            // setUser(user)
+            setUser(user)
             navigate('/dashboard')
       }
 
@@ -47,7 +47,7 @@ const AuthUser = () => {
       return {
          setToken: saveToken,
          token,
-        //  user,
+         user,
          getToken,
          http,
          logout
