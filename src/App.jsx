@@ -14,18 +14,22 @@ import Client from './components/client/Client'
 import Coins from './components/Coins'
 import {CURRENT_USER_TYPE, USER_TYPES } from './components/utils/RoleAuth'
 import { useEffect } from 'react'
+import AuthUser from './components/utils/AuthUser'
 
 
 
 
 
 function App() {
+  
+
+
 
   return (
     <div className="App">
       <Router>
         <Admin>
-        <Sidebar />
+        <Admin><Sidebar /></Admin>
         </Admin>
         <div className='flex flex-col justify-between  gap-12'>
           <SearchBar />
@@ -60,10 +64,13 @@ function Public({ children }) {
 }
 
 function Admin({children}) {
-  if(CURRENT_USER_TYPE === USER_TYPES.ADMIN )
+   const {user} =AuthUser();
+  if(CURRENT_USER_TYPE === USER_TYPES.ADMIN || user===USER_TYPES.USER )
   {
+    // window.location.reload();
     return <div>{children}</div>
   }else{
+    // window.location.reload();
     return null
   }
 
