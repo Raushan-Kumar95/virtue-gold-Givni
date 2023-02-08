@@ -22,7 +22,7 @@ const USER_TYPES = {
   ADMIN: 'admin_user'
 }
 
-const CURRENT_USER_TYPE = USER_TYPES.ADMIN;
+let CURRENT_USER_TYPE = USER_TYPES.ADMIN;
 
 function App() {
 
