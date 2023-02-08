@@ -10,11 +10,10 @@ const Sidebar = () => {
 
     const [open, setOpen] = useState(false)
 
-    let navopenState = "md:absolute  md:-left-[300px] "
+    let navopenState = "md:absolute  md:-left-[300px]"
 
     let navcloseState = "hidden"
 
-    // console.log(open)
 
     return (
         <div className='flex w-full absolute z-20 relative'>

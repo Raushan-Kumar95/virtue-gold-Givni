@@ -25,7 +25,7 @@ const AuthUser = () => {
     //     return user_detail
     //  }
 
-     const [token,setToken] =useState(getToken())
+     const [token,setToken] = useState(getToken())
     //  const[user,setUser] =useState(getUser())
 
       const saveToken =(token) =>{
