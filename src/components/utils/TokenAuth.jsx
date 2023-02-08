@@ -1,22 +1,23 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthUser from "./AuthUser";
 
 
 
-const TokenAuth = ()=>{
+const TokenAuth = () => {
 
-    const {getToken} = AuthUser()
+    const { getToken } = AuthUser()
     const navigate = useNavigate()
 
-    useEffect(()=>{
-        
-    if(!getToken()){
-        navigate("/login")
-    }},[] )
+    useEffect(() => {
+
+        if (!getToken()) {
+            navigate("/login")
+        }
+    }, [])
 
     return (null)
-        
+
 
 
 }
