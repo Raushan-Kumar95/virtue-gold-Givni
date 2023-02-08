@@ -17,6 +17,7 @@ const AuthUser = () => {
       const logout =()=>{
         sessionStorage.clear();
         navigate("/login")
+        window.location.reload();
       }
 
       const getUser = ()=>{
