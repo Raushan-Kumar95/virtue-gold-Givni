@@ -3,15 +3,15 @@ import Axios from 'axios'
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '../../public/vietue_logo_2.png'
 import { Link, useNavigate } from 'react-router-dom'
+import {CURRENT_USER_TYPE, USER_TYPES } from './utils/RoleAuth'
+
 
 
 
 const Login = () => {
 
   const navigate = useNavigate()
-
   const URL = "https://reqres.in/api/login"
-
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -28,12 +28,13 @@ const Login = () => {
     e.preventDefault();
     console.log(data, 24);
 
-    Axios.post(URL, {
-      email: data.email,
-      password: data.password,
-    }).then(res => {
-      console.log(res.data);
-      errorMessage(res.data);
+    Axios.post(URL, data).then(res => {
+      console.log(res.data.token, 32);
+      if(res.data){
+        sessionStorage.setItem("token" , JSON.stringify(res.data.token))
+        navigate('/dashboard')
+      }
+      // errorMessage(res.data);
     }).catch(err => { console.log('Not Connected to Database'); })
   }
 
