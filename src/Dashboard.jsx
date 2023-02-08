@@ -4,6 +4,8 @@ import BarChart from './components/chart/BarChart'
 import LineChart from './components/chart/LineChart'
 import PieChart from './components/chart/PieChart'
 import ProgressChart from './components/chart/ProgressChart'
+import {USER_TYPES } from './components/utils/RoleAuth'
+
 
 
 import { Data } from './components/utils/Data'
@@ -14,8 +16,9 @@ const Dashboard = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (!localStorage.getItem('token')) {
-            navigate('/login')
+        if (!sessionStorage.getItem('token')) {
+            // navigate('/login')
+            
         }
     }, [])
 
