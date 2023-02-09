@@ -20,13 +20,11 @@ const Sidebar = () => {
             <div className={`w-screen h-screen bg-white opacity-30 absolute md:hidden ${open ? "block":  "hidden"}`}></div>
             <div className={`fixed overflow-y-scroll h-full overflow-x-none  md:flex shadow-xl top-0 left-0 bg-red-200  flex flex-col gap-8 h-screen px-12 py-12 md:block ${open ? navopenState : navcloseState}`}>
                 <header className=' flex flex-col gap-2 justify-center w-full'>
-            
 
                     <div className='flex flex-col gap-2 justify-center'>
                         <img width={100} src={logo} alt="logo-vietue" srcset="" />
                         <p className='text-sm w-32'>Virtue Gold Pvt. Ltd.</p>
                     </div>
-
 
                 </header>
                 

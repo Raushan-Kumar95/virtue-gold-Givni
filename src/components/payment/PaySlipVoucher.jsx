@@ -1,7 +1,7 @@
 import { fontSize } from '@mui/system';
 import React from 'react'
 import DataTable, { createTheme } from 'react-data-table-component';
-import logo from '../../../public/vietue_logo_2.png';
+import logo from '/vietue_logo_2.png';
 
 
 const columns = [

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 import goldImg from '../assets/images/goldImg.png'
-import vietue_logo_2 from '../../public/vietue_logo_2.png'
+import vietue_logo_2 from '/vietue_logo_2.png'
 import { Link } from "react-router-dom";
 
 const Signup = () => {
