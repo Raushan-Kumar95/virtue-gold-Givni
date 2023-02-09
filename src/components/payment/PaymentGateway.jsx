@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../../public/vietue_logo_2.png'
+import logo from '/vietue_logo_2.png'
 import phonepe from '../../assets/images/phonepe.png'
 import gpay from '../../assets/images/gpay.png'
 import visa from '../../assets/images/visa.png'

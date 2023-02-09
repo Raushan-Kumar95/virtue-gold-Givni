@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Axios from 'axios' 
 import goldImg from '../assets/images/goldImg.png'
-import vietue_logo_2 from '../../public/vietue_logo_2.png'
+import vietue_logo_2 from '/vietue_logo_2.png'
 import { Link, useNavigate } from 'react-router-dom'
 import {CURRENT_USER_TYPE, USER_TYPES } from './utils/RoleAuth'
 import AuthUser from './utils/AuthUser'
@@ -17,6 +17,7 @@ const Login = () => {
 
   const navigate = useNavigate()
    const {http,setToken} = AuthUser();
+   
   // const URL = "https://reqres.in/api/login"
   const [data, setData] = useState({
     email: '',
