@@ -11,11 +11,8 @@ import AuthUser from './utils/AuthUser'
 
 const Login = () => {
 
-
-
-
-
   const navigate = useNavigate()
+
    const {http,setToken} = AuthUser();
    
   // const URL = "https://reqres.in/api/login"
@@ -35,13 +32,15 @@ const Login = () => {
     e.preventDefault();
     console.log(data, 24);
 
-    http.post("/token", data).then(res => {
+    Axios.post("http://192.168.1.15:5000/login", data).then(res => {
+      console.log(res)
       console.log(res.data);
       if(res.data){
-        // sessionStorage.setItem("token" , JSON.stringify(res.data.token))
-        // navigate('/dashboard')
-        setToken(res.data.token,res.data.role)
-        window.location.reload();
+        sessionStorage.setItem("token" , JSON.stringify(res.data.token))
+        sessionStorage.setItem("user" , JSON.stringify(res.data.user))
+        navigate('/dashboard')
+        // setTok en(res.data.token, res.data.user)
+        window.location.reload(); 
       }
       
     }).catch(err => { console.log(err); })

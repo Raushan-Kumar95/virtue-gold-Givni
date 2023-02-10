@@ -27,19 +27,20 @@ const AuthUser = () => {
      }
 
      const [token,setToken] =useState(getToken())
+
      const[user,setUser] =useState(getUser())
 
       const saveToken =(token,user) =>{
 
-            sessionStorage.setItem('token',JSON.stringify(token))
-            sessionStorage.setItem('user',JSON.stringify(user))
+            sessionStorage.setItem('token',JSON.stringify(data.token))
+            sessionStorage.setItem('user',JSON.stringify(data.user))
             setToken(token)
             setUser(user)
             navigate('/dashboard')
       }
 
       const http = axios.create({
-        baseURL:"http://192.168.1.15:8080",
+        baseURL:"http://192.168.1.15:5000/signup",
         headers:{
             'Content-type':"application/json"
         }

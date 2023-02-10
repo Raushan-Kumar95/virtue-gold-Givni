@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 const Signup = () => {
 
-  const URL = "http://localhost:8080/addData"
+  const URL = "http://192.168.1.15:5000/signup"
+  
   const [data, setData] = useState({
     fullName: '',
     email: '',
