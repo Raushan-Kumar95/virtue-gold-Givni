@@ -42,7 +42,9 @@ const Signup = () => {
     }).then(res => {
       console.log(res.data);
 
-      alert('Successfully Signup!')
+      // alert('Successfully Signup!')
+      console.log('Data Saved!')
+
       setIsOtp(true)
     }).catch(err => { err })
 
@@ -80,7 +82,7 @@ const Signup = () => {
             <div className='flex gap-2'>
               <i class="fa-solid fa-key bg-white p-3 my-[9px]"></i><input type="password" name="" id="" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
             </div>
-            <button className='bg-green-500 hover:bg-green-600 text-white text-xl font-semibold py-2 px-3 my-4 w-full hover:duration-300 hover:shadow-lg'><Link to='/otp'>SIGNUP</Link></button>
+            <button className='bg-green-500 hover:bg-green-600 text-white text-xl font-semibold py-2 px-3 my-4 w-full hover:duration-300 hover:shadow-lg'>SIGNUP</button>
             <p className='text-gray-600 font-semibold'>Already Signup? - <Link to="/login" className='text-purple-800 hover:text-green-800 hover:underline hover:duration-300 hover:drop-shadow-lg hover:scale-110'>Login</Link></p>
           </form>
         </div>
