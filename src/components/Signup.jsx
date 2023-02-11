@@ -15,13 +15,16 @@ const Signup = () => {
   const [isOtp, setIsOtp] = useState(false);
 
   const URL1 = "http://192.168.1.15:5000/signup"
-  
+
   const [data, setData] = useState({
     fullName: '',
     email: '',
     mobile: '',
     password: '',
+    cnfrmpass: ''
   })
+
+  console.log(data.cnfrmpass)
 
   const handleData = (e) => {
     const newData = { ...data }
@@ -33,29 +36,34 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(data);
+    if (!data.email && !data.fullName && !data.mobile && !data.password) {
+      console.error("Please fill all the fields")
+    } else if (data.password !== data.cnfrmpass) {
+      console.error("password not matched")
+    }
+    else {
+      // console.error("Please fill all the fields")
+      Axios.post(URL1, {
+        fullName: data.fullName,
+        email: data.email,
+        mobile: data.mobile,
+        password: data.password,
+      }).then(res => {
+        console.log(res.data);
 
-    Axios.post(URL1, {
-      fullName: data.fullName,
-      email: data.email,
-      mobile: data.mobile,
-      password: data.password,
-    }).then(res => {
-      console.log(res.data);
+        // alert('Successfully Signup!')
+        console.log('Data Saved!')
 
-      // alert('Successfully Signup!')
-      console.log('Data Saved!')
-
-      setIsOtp(true)
-    }).catch(err => { err })
-
-   
+        setIsOtp(true)
+      }).catch(err => { err })
+    }
   }
 
-  
 
-  return   isOtp ? <OtpVerification email={data.email} />  : (
-   
-    
+
+  return isOtp ? <OtpVerification email={data.email} /> : (
+
+
     <div className='flex justify-center items-center '>
       <div className=' flex md:flex-row flex-col bg-blue-300 shadow-2xl rounded-md'>
 
@@ -80,7 +88,7 @@ const Signup = () => {
               <i class="fa-solid fa-lock bg-white p-3 my-[9px]"></i> <input value={data.password} onChange={handleData} type="password" name="" id="password" placeholder='password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none' />
             </div>
             <div className='flex gap-2'>
-              <i class="fa-solid fa-key bg-white p-3 my-[9px]"></i><input type="password" name="" id="" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
+              <i class="fa-solid fa-key bg-white p-3 my-[9px]"></i><input type="password" value={data.cnfrmpass} onChange={handleData} name="" id="cnfrmpass" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
             </div>
             <button className='bg-green-500 hover:bg-green-600 text-white text-xl font-semibold py-2 px-3 my-4 w-full hover:duration-300 hover:shadow-lg'>SIGNUP</button>
             <p className='text-gray-600 font-semibold'>Already Signup? - <Link to="/login" className='text-purple-800 hover:text-green-800 hover:underline hover:duration-300 hover:drop-shadow-lg hover:scale-110'>Login</Link></p>
