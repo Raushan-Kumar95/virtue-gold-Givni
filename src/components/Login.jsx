@@ -39,7 +39,7 @@ const Login = () => {
         sessionStorage.setItem("token" , JSON.stringify(res.data.token))
         sessionStorage.setItem("user" , JSON.stringify(res.data.user))
         navigate('/dashboard')
-        // setTok en(res.data.token, res.data.user)
+        // setToken(res.data.token, res.data.user)
         window.location.reload(); 
       }
       

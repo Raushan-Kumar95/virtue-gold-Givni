@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, createContext, useContext } from 'react'
 import Axios from 'axios'
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '/vietue_logo_2.png'
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
+import OtpVerification from './otp/OtpVerification';
+
+// const UserContext = createContext();
 
 const Signup = () => {
   const navigate = useNavigate()
 
+
+  const [isOtp, setIsOtp] = useState(false);
+
   const URL1 = "http://192.168.1.15:5000/signup"
-  const URL2 = "http://192.168.1.15:5000/verify-otp"
   
   const [data, setData] = useState({
     fullName: '',
@@ -17,6 +22,7 @@ const Signup = () => {
     mobile: '',
     password: '',
   })
+
   const handleData = (e) => {
     const newData = { ...data }
     newData[e.target.id] = e.target.value;
@@ -35,25 +41,19 @@ const Signup = () => {
       password: data.password,
     }).then(res => {
       console.log(res.data);
+
       alert('Successfully Signup!')
+      setIsOtp(true)
     }).catch(err => { err })
 
-    Axios.post(URL2, {
-     
-      email: data.email,
-     
-    }).then(res => {
-      console.log(res.data);
-      if(res.data.code === 200){
-        navigate('/otp')
-      }
-      // alert('otp send')
-    }).catch(err => { err })
+   
   }
 
   
 
-  return (
+  return   isOtp ? <OtpVerification email={data.email} />  : (
+   
+    
     <div className='flex justify-center items-center '>
       <div className=' flex md:flex-row flex-col bg-blue-300 shadow-2xl rounded-md'>
 
