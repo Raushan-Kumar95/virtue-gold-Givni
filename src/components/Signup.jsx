@@ -9,7 +9,7 @@ const Signup = () => {
   const navigate = useNavigate()
 
   const URL1 = "http://192.168.1.15:5000/signup"
-  const URL2 = "http://192.168.1.15:5000/send-otp"
+  const URL2 = "http://192.168.1.15:5000/verify-otp"
   
   const [data, setData] = useState({
     fullName: '',
