@@ -17,8 +17,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         if (!sessionStorage.getItem('token')) {
-            // navigate('/login')
-            
+            navigate('/login')
         }
     }, [])
 
