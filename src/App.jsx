@@ -15,6 +15,8 @@ import Coins from './components/Coins'
 import {CURRENT_USER_TYPE, USER_TYPES } from './components/utils/RoleAuth'
 import { useEffect } from 'react'
 import AuthUser from './components/utils/AuthUser'
+import OtpVerification from './components/otp/OtpVerification'
+
 
 
 
@@ -45,6 +47,8 @@ function App() {
             <Route path='/' element={<Navigate to="/login" replace={true} />} ></Route>
             <Route path='/signup' element={<Public><Signup /></Public>} ></Route>
             <Route path='/login' element={<Public><Login /></Public>} ></Route>
+            <Route path='/otp' element={<Public><OtpVerification /></Public>} ></Route>
+            
           </Routes>
 
         </div>

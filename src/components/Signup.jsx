@@ -3,10 +3,13 @@ import Axios from 'axios'
 import goldImg from '../assets/images/goldImg.png'
 import vietue_logo_2 from '/vietue_logo_2.png'
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
+  const navigate = useNavigate()
 
-  const URL = "http://192.168.1.15:5000/signup"
+  const URL1 = "http://192.168.1.15:5000/signup"
+  const URL2 = "http://192.168.1.15:5000/send-otp"
   
   const [data, setData] = useState({
     fullName: '',
@@ -25,7 +28,7 @@ const Signup = () => {
     e.preventDefault();
     console.log(data);
 
-    Axios.post(URL, {
+    Axios.post(URL1, {
       fullName: data.fullName,
       email: data.email,
       mobile: data.mobile,
@@ -33,6 +36,18 @@ const Signup = () => {
     }).then(res => {
       console.log(res.data);
       alert('Successfully Signup!')
+    }).catch(err => { err })
+
+    Axios.post(URL2, {
+     
+      email: data.email,
+     
+    }).then(res => {
+      console.log(res.data);
+      if(res.data.code === 200){
+        navigate('/otp')
+      }
+      // alert('otp send')
     }).catch(err => { err })
   }
 
@@ -65,7 +80,7 @@ const Signup = () => {
             <div className='flex gap-2'>
               <i class="fa-solid fa-key bg-white p-3 my-[9px]"></i><input type="password" name="" id="" placeholder='confirm password' className='w-[95%] py-2 px-3 my-2 border border-slate-400 focus:border-red-400 outline-none ' />
             </div>
-            <button className='bg-green-500 hover:bg-green-600 text-white text-xl font-semibold py-2 px-3 my-4 w-full hover:duration-300 hover:shadow-lg'>SIGNUP</button>
+            <button className='bg-green-500 hover:bg-green-600 text-white text-xl font-semibold py-2 px-3 my-4 w-full hover:duration-300 hover:shadow-lg'> SIGNUP</button>
             <p className='text-gray-600 font-semibold'>Already Signup? - <Link to="/login" className='text-purple-800 hover:text-green-800 hover:underline hover:duration-300 hover:drop-shadow-lg hover:scale-110'>Login</Link></p>
           </form>
         </div>
